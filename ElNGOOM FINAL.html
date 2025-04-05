@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نهائي دورة النجوم - قرية طلا وتوابعها</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        h1 {
+            color: #e74c3c;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .teams {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .team {
+            text-align: center;
+            width: 45%;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .team:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #eee;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .vote-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .vote-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .vote-info {
+            font-size: 1rem;
+            margin: 15px 0;
+            color: #7f8c8d;
+        }
+        
+        .countdown-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .countdown-container h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .countdown-timer {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+            letter-spacing: 2px;
+        }
+        
+        .match-day {
+            font-size: 2rem;
+            color: #f1c40f;
+            font-weight: bold;
+            display: none;
+            animation: pulse 1.5s infinite;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .teams {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .team {
+                width: 90%;
+                margin-bottom: 30px;
+            }
+            
+            .container {
+                padding: 20px;
+                margin-top: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-timer {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>نهائي دورة النجوم - قرية طلا وتوابعها</h1>
+            <p class="subtitle">البطولة النهائية بين الفريقين المميزين | 7 إبريل 5:00 مساءً</p>
+        </header>
+        
+        <div class="teams">
+            <div class="team" id="team1">
+                <h2>فريق معوض</h2>
+                <img src="https://via.placeholder.com/150?text=Team+Maawad" alt="فريق معوض" class="team-img">
+                <p class="vote-info">اضغط على الزر بالأسفل للتصويت</p>
+                <a href="https://strawpoll.com/wby5QDBG8yA" class="vote-btn" target="_blank">صوت الآن على StrawPoll</a>
+            </div>
+            
+            <div class="team" id="team2">
+                <h2>فريق القضاة (طلا)</h2>
+                <img src="https://via.placeholder.com/150?text=Team+Judges" alt="فريق القضاة" class="team-img">
+                <p class="vote-info">نفس رابط التصويت أعلاه</p>
+                <a href="https://strawpoll.com/wby5QDBG8yA" class="vote-btn" target="_blank">صوت الآن على StrawPoll</a>
+            </div>
+        </div>
+        
+        <div class="countdown-container">
+            <h2>العد التنازلي لموعد النهائي</h2>
+            <div class="countdown-timer" id="countdown"></div>
+            <div class="match-day" id="matchDay">يوم المباراة!</div>
+        </div>
+        
+        <div style="text-align: center; margin: 20px 0;">
+            <a href="https://strawpoll.com/wby5QDBG8yA/results" class="vote-btn" target="_blank" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">عرض النتائج المباشرة</a>
+        </div>
+        
+        <footer>
+            <p>This site was designed by Ahmed Mohamed "BATOT"</p>
+        </footer>
+    </div>
+
+    <script>
+        // بدء العد التنازلي
+        function startCountdown() {
+            // تاريخ النهائي: 7 إبريل الساعة 5:00 مساءً
+            const finalDate = new Date('2025-04-07T17:00:00').getTime();
+            
+            const countdownInterval = setInterval(updateCountdown, 1000);
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = finalDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                const countdownElement = document.getElementById('countdown');
+                const matchDayElement = document.getElementById('matchDay');
+                
+                if (distance > 0) {
+                    countdownElement.innerHTML = `
+                        <div style="display: inline-block; margin: 0 5px;">
+                            <div style="font-size: 1.5rem;">${days}</div>
+                            <div style="font-size: 0.8rem;">أيام</div>
+                        </div>
+                        <div style="display: inline-block; margin: 0 5px;">
+                            <div style="font-size: 1.5rem;">${hours}</div>
+                            <div style="font-size: 0.8rem;">ساعات</div>
+                        </div>
+                        <div style="display: inline-block; margin: 0 5px;">
+                            <div style="font-size: 1.5rem;">${minutes}</div>
+                            <div style="font-size: 0.8rem;">دقائق</div>
+                        </div>
+                        <div style="display: inline-block; margin: 0 5px;">
+                            <div style="font-size: 1.5rem;">${seconds}</div>
+                            <div style="font-size: 0.8rem;">ثواني</div>
+                        </div>
+                    `;
+                } else {
+                    clearInterval(countdownInterval);
+                    countdownElement.style.display = 'none';
+                    matchDayElement.style.display = 'block';
+                }
+            }
+            
+            // تشغيلها مرة أولى لتجنب التأخير
+            updateCountdown();
+        }
+        
+        // عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            startCountdown();
+        });
+    </script>
+</body>
+</html>
